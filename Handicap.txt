@@ -1,0 +1,21 @@
+import numpy as np
+import requests
+import pandas as pd
+import io
+import matplotlib.pyplot as plt
+import webbrowser
+from IPython.display import display, HTML
+
+
+df=pd.read_csv('http://www.football-data.co.uk/mmz4281/1819/E0.csv')
+
+
+df = df.fillna(0)
+
+df['Scores']=df["FTHG"].apply(str)+ "-" + df["FTAG"].apply(str).map(str)
+
+
+df['Total Goals']=round(df['FTHG']+df['FTAG'])
+
+df['Total Goals']=round(df['FTHG']+df['FTAG'])
+
